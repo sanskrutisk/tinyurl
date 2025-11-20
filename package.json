@@ -1,0 +1,19 @@
+{
+  "name": "tinyurl-frontend",
+  "version": "1.0.0",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "axios": "^1.13.2",
+    "dotenv": "^16.6.1",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

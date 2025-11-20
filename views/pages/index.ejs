@@ -1,0 +1,41 @@
+<%- include("../layouts/layout", { body: `
+  <h2>Dashboard</h2>
+
+  <form class="create-form" action="/create" method="POST">
+    <input type="url" name="longUrl" placeholder="Enter long URL" required />
+    <input type="text" name="code" placeholder="Custom code (optional)" />
+    <button type="submit">Create Short Link</button>
+  </form>
+
+  ${error ? `<p class="error">${error}</p>` : ""}
+
+  ${links.length > 0 ? `
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>URL</th>
+          <th>Clicks</th>
+          <th>Last Clicked</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        ${links.map(link => `
+          <tr>
+            <td><a href="/stats/${link.code}">${link.code}</a></td>
+            <td class="truncate">${link.longUrl}</td>
+            <td>${link.clicks}</td>
+            <td>${link.lastClicked ? new Date(link.lastClicked).toLocaleString() : "Never"}</td>
+            <td>
+              <form action="/delete/${link.code}" method="POST">
+                <button class="delete-btn">Delete</button>
+              </form>
+            </td>
+          </tr>
+        `).join("")}
+      </tbody>
+    </table>
+  ` : `<p>No links found.</p>`}
+` }) %>

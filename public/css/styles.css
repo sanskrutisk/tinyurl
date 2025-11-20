@@ -1,0 +1,48 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #fafafa;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+.create-form input {
+  padding: 8px;
+  margin-right: 5px;
+}
+
+button {
+  padding: 8px 12px;
+  background: #4e73df;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button.delete-btn {
+  background: #d9534f;
+}
+
+.error {
+  color: red;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+}
+
+table th, table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.truncate {
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
